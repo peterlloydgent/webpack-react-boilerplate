@@ -6,6 +6,6 @@ This is a boilerplate for an Application written in ES6
 ## Chosen technologies
 For ES5 compabitility I have chosen WebPack as the builder with Babel on top for the fallback.
 
-The Application itself is to be based on BackboneJS for the MC part of MVC, and React for the V.
+The Application itself is based on BackboneJS for the MC part of MVC, and React for the V.
 
-jQuery, Backbone, React are always available in your code as defined in webpack-dev-server.config.js and webpack-production.config.js since these are use a LOT and are a pain to keep redeclaring.
+jQuery, Backbone, React are always available in your code as defined in [webpack-dev-server.config.js](https://github.com/IgorSzyporyn/webpack-react-backbone-boilerplate/blob/master/webpack-dev-server.config.js) and [webpack-production.config.js](https://github.com/IgorSzyporyn/webpack-react-backbone-boilerplate/blob/master/webpack-production.config.js) since these are use a LOT and are a pain to keep redeclaring.
