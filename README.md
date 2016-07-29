@@ -1,1 +1,1 @@
-# BadgerClanWeb
+# Boilerplate for App using BackboneJS/React with WebPack to compile
