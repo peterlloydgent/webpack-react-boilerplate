@@ -6,10 +6,11 @@ This is a boilerplate for an Application written in ES6
 ## Required technologies
 For ES5 compabitility I have chosen WebPack as the builder with Babel on top for the fallback.
 
-The Application itself is based on BackboneJS for the MC part of MVC, and React for the V.
+The Application itself is based on BackboneJS for the MC part of MVC, and ReactJS for the V.
 
 * NodeJS
 * NodePackageManager
 * WebPack
+* Babel
 * BackboneJS
 * ReactJS
