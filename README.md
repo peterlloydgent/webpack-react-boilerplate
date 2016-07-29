@@ -1,1 +1,1 @@
-# Boilerplate for App using BackboneJS/React with WebPack to compile
+# Boilerplate for ES6 App using Babel compile
