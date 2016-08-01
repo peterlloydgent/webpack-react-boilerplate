@@ -1,7 +1,5 @@
 "use strict";
 
-var f_noop = function () {};
-
 class Router extends Backbone.Router {
 
 	constructor(props) {
@@ -10,8 +8,7 @@ class Router extends Backbone.Router {
 
 		this.routes = {
 			"": "home"
-		}
-		this.home = f_noop;
+		};
 	}
 }
 

@@ -1,18 +1,21 @@
 "use strict";
 
-import injectTapEventPlugin from 'react-tap-event-plugin';
-import Router from './controller/Router';
-import App from './App';
+// Import the 3 key elements of the applications
+import Router from './model/Router'; // Controlling all entry points via URL and routing
+import Viewport from './view/Viewport'; // Controls theme, layout engine and environment
+import App from './App'; // The application controller
 
-var i_router = new Router();
+// Create the router for the application
+let router = new Router();
 
-// Needed for onTouchTap
-// http://stackoverflow.com/a/34015469/988941
-injectTapEventPlugin();
+// Create the app with router to pass as child to viewport
+let app = <App router={router} />;
 
+// Render the viewport with the application as child
 ReactDOM.render(
-  <App router={i_router} />,
-  jQuery('#viewport').get(0)
+	<Viewport child={app} />,
+	document.getElementById('viewport')
 );
 
+// Set things in motion....
 Backbone.history.start();
