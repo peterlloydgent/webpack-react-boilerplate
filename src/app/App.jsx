@@ -1,6 +1,7 @@
 "use strict";
 
 import Router from './model/Router';
+import DummyComponent from './component/DummyComponent';
 
 class App extends React.Component {
 	
@@ -16,6 +17,9 @@ class App extends React.Component {
 	render() {
 		return (
 			<div id="application">
+				<DummyComponent
+					className="dummy"
+				/>
 			</div>
 		);
 	}
