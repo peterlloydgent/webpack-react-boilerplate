@@ -1,5 +1,5 @@
-# WebMap Application for World War II Online
-An all out warfare MMOG deserves a top of the line cross platform application to properly present its full interactivity in all it's might and magic. As well as it's full extent and deep rich gameplay.
+# Application boilerplate
+As so many before me - I needed a boilerplate for applications
 
 ## Required technologies
 For ES5 compabitility I have chosen WebPack as the builder with Babel on top for the fallback.
@@ -16,8 +16,3 @@ Here listed some of the core techs used, for a full list look in the [package.js
 * [React](https://facebook.github.io/react/)
 * [react-backbone](https://github.com/jhudson8/react-backbone)
 * [Material-UI](http://www.material-ui.com/#/)
-
-## What is the WebMap about?
-To understand what WebMap Application for World War II Online is, you will have to understand what World War II Online is.
-
-And that takes a while - so if you are not familiar with the game, the rest will just be mumbo jumbo/gibberish... so be warned.
