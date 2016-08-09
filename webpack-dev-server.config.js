@@ -68,7 +68,7 @@ const config = {
 			},
 			{
 				test: /\.scss$/,
-				loader: ExtractTextWebpackPlugin.extract('style-loader','css-loader','sass-loader')
+				loader: ExtractTextWebpackPlugin.extract(['style', 'css!sass'])
 			},
 			{
 				test: /\.woff$/,
