@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
 const TransferWebpackPlugin = require('transfer-webpack-plugin');
+const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
 
 const buildPath = path.resolve(__dirname, 'build');
 const nodeModulesPath = path.resolve(__dirname, 'node_modules');
@@ -33,11 +34,6 @@ const config = {
 	resolve: {
 		extensions: ['', '.js', '.jsx']
 	},
-	postcss: function() {
-		return [autoprefixer({
-			browsers: ['last 3 versions']
-		})];
-	},
 	plugins: [
 		new webpack.ProvidePlugin({
 			$: 'jquery',
@@ -48,6 +44,9 @@ const config = {
 			React: 'react',
 			ReactDOM: 'react-dom'
 		}),
+		new ExtractTextWebpackPlugin('main2.css', {
+			allChunks: true
+		}),
 		new webpack.HotModuleReplacementPlugin(),
 		new TransferWebpackPlugin([
 			{
@@ -56,6 +55,9 @@ const config = {
 		],
 		path.resolve(__dirname, 'src'))
 	],
+	sassLoader: {
+		includePaths: [path.resolve(__dirname, 'src/stylesheets')]
+	},
 	module: {
 		loaders: [
 			{
@@ -70,11 +72,7 @@ const config = {
 			},
 			{
 				test: /\.scss$/,
-				loaders: ['style', 'css', 'postcss', 'sass']
-			},
-			{
-				test: /\.less$/,
-				loaders: ['style', 'css', 'less']
+				loader: ExtractTextWebpackPlugin.extract('style-loader','css-loader','sass-loader')
 			},
 			{
 				test: /\.woff$/,

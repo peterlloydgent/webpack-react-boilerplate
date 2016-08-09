@@ -4,6 +4,7 @@
 import Router from './model/Router'; // Controlling all entry points via URL and routing
 import Viewport from './view/Viewport'; // Controls theme, layout engine and environment
 import App from './App'; // The application controller
+import './stylesheets/main.scss';
 
 // Create the router for the application
 let router = new Router();

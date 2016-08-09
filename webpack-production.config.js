@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
 const TransferWebpackPlugin = require('transfer-webpack-plugin');
+const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
 
 const buildPath = path.resolve(__dirname, 'build');
 const nodeModulesPath = path.resolve(__dirname, 'node_modules');
@@ -11,17 +12,13 @@ const config = {
 		path.join(__dirname, '/src/app/main.js')
 	],
 	output: {
-		path: buildPath, // Path of output file
-		filename: 'app.js' // Name of output file
+		path: buildPath,
+		filename: 'app.js',
+		publicPath: '/static'
 	},
 	devtool: 'source-map',
 	resolve: {
 		extensions: ['', '.js', '.jsx']
-	},
-	postcss: function() {
-		return [autoprefixer({
-			browsers: ['last 3 versions']
-		})];
 	},
 	plugins: [
 		new webpack.ProvidePlugin({
@@ -33,11 +30,15 @@ const config = {
 			React: 'react',
 			ReactDOM: 'react-dom'
 		}),
+		new ExtractTextWebpackPlugin('main.css', {
+			allChunks: true
+		}),
 		new webpack.optimize.UglifyJsPlugin({
 			compress: {
 				warnings: false
 			}
 		}),
+
 		// Transfer Files
 		new TransferWebpackPlugin([
 			{
@@ -46,6 +47,9 @@ const config = {
 		],
 		path.resolve(__dirname, 'src'))
 	],
+	sassLoader: {
+		includePaths: [path.resolve(__dirname, 'src/stylesheets')]
+	},
 	module: {
 		loaders: [
 			{
@@ -59,11 +63,7 @@ const config = {
 			},
 			{
 				test: /\.scss$/,
-				loaders: ['style', 'css', 'postcss', 'sass']
-			},
-			{
-				test: /\.less$/,
-				loaders: ['style', 'css', 'less']
+				loader: ExtractTextWebpackPlugin.extract('style', 'css!sass')
 			},
 			{
 				test: /\.woff$/,
