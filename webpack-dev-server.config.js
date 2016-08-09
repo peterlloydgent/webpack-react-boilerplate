@@ -39,7 +39,6 @@ const config = {
 			$: 'jquery',
 			jQuery: 'jquery',
 			jquery: 'jquery',
-			Backbone: 'backbone',
 			_: 'underscore',
 			React: 'react',
 			ReactDOM: 'react-dom'
