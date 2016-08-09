@@ -13,8 +13,7 @@ const config = {
 	],
 	output: {
 		path: buildPath,
-		filename: 'app.js',
-		publicPath: '/static'
+		filename: 'app.js'
 	},
 	devtool: 'source-map',
 	resolve: {
@@ -47,9 +46,6 @@ const config = {
 		],
 		path.resolve(__dirname, 'src'))
 	],
-	sassLoader: {
-		includePaths: [path.resolve(__dirname, 'src/stylesheets')]
-	},
 	module: {
 		loaders: [
 			{

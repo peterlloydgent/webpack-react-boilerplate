@@ -55,9 +55,6 @@ const config = {
 		],
 		path.resolve(__dirname, 'src'))
 	],
-	sassLoader: {
-		includePaths: [path.resolve(__dirname, 'src/stylesheets')]
-	},
 	module: {
 		loaders: [
 			{
