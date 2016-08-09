@@ -9,7 +9,7 @@ const autoprefixer = require('autoprefixer');
 
 const config = {
 	entry: [
-		path.join(__dirname, '/src/app/main.js')
+		path.join(__dirname, '/src/app/main.jsx')
 	],
 	output: {
 		path: buildPath,
